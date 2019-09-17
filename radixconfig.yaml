@@ -43,7 +43,7 @@ spec:
             limits:
               memory: "54Mi"
               cpu: "200m"
-          replicas: 2
+          replicas: 1
   dnsAppAlias:
     environment: development
     component: www
