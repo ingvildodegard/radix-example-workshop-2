@@ -7,6 +7,10 @@ spec:
     - name: development
       build:
         from: master
+    - name: qa
+      build:
+        from: release/*
+    - name: prod
   components:
     - name: www
       src: ./www
@@ -43,6 +47,26 @@ spec:
             limits:
               memory: '54Mi'
               cpu: '200m'
+          replicas: 2
+        - environment: qa
+          monitoring: false
+          resources:
+            requests:
+              memory: '50Mi'
+              cpu: '10m'
+            limits:
+              memory: '54Mi'
+              cpu: '20m'
+          replicas: 1
+        - environment: prod
+          monitoring: false
+          resources:
+            requests:
+              memory: '50Mi'
+              cpu: '10m'
+            limits:
+              memory: '54Mi'
+              cpu: '20m'
           replicas: 2
   dnsAppAlias:
     environment: development
