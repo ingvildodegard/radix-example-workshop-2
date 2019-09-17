@@ -1,15 +1,15 @@
 import React from 'react';
+import './App.css';
 import Echo from './components/Echo';
 import Header from './components/Header';
 import EchoService from './services/Echo';
-import './App.css';
 
 class App extends React.Component {
   constructor() {
     super()
 
     this.refreshInterval = 1000;
-    this.useMockData = true;
+    this.useMockData = false;
     
     this.state ={
       echoResult: {},
